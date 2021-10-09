@@ -76,6 +76,7 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 plugins=(
 	git
 	zsh-syntax-highlighting
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
