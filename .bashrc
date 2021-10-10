@@ -1,3 +1,3 @@
-alias config='/usr/bin/git --git-dir=/Users/dshulch/.cfg/ --work-tree=/Users/dshulch'
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
