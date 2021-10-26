@@ -13,6 +13,20 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel9k"/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
 
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs custom_arc_branch_name)
+
+POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="
+command -v arc 1>/dev/null && 
+arc rev-parse --arc-dir 2> 1 1>/dev/null && 
+arc status -bs | 
+head -1 | 
+cut -d' ' -f 2 | 
+cut -d'.' -f 1 | 
+awk '{print \"Ѧ \" \$0}'"
+POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_BACKGROUND="green"
+POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_FOREGROUND="black"
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
