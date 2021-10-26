@@ -17,7 +17,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs custom_arc_branch_name)
 
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="
 command -v arc 1>/dev/null && 
-arc rev-parse --arc-dir 2> 1 1>/dev/null && 
+arc rev-parse --arc-dir 2>/dev/null 1>/dev/null && 
 arc status -bs | 
 head -1 | 
 cut -d' ' -f 2 | 
