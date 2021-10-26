@@ -28,3 +28,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # reinstall vim for YCM from recept https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
 # fix problem with YCM from https://remarkablemark.org/blog/2021/04/25/youcompleteme-install-error-mojave/
 
+# install neo-vim
+brew install neovim
+# then add .vimrc to neo-vim from instructions :help nvim-from-vim
