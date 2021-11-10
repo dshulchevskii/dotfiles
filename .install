@@ -4,13 +4,13 @@ sudo apt-get install zsh # for ubuntu
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# make zsh default shell for ubuntu                                             
-echo '                                                                          
-if [ "$SHELL" != "/usr/bin/zsh" ]                                               
-then                                                                            
-    export SHELL="/usr/bin/zsh"                                                 
-    exec /usr/bin/zsh -l    # -l: login shell again                             
-fi                                                                              
+# make zsh default shell for ubuntu
+echo '
+if [ "$SHELL" != "/usr/bin/zsh" ]
+then
+    export SHELL="/usr/bin/zsh"
+    exec /usr/bin/zsh -l    # -l: login shell again
+fi
 ' >> $HOME/.profile
 
 # install fzf
@@ -40,3 +40,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 # install neo-vim
 brew install neovim
 # then add .vimrc to neo-vim from instructions :help nvim-from-vim
+# install neo-vim for ubuntu
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+tar -xf nvim-linux64.tar.gz
+rm nvim-linux64.tar.gz
+mkdir -p $HOME/bin
+ln -s $HOME/nvim-linux64/bin/nvim $HOME/bin/nvim
+
