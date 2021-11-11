@@ -47,3 +47,10 @@ rm nvim-linux64.tar.gz
 mkdir -p $HOME/bin
 ln -s $HOME/nvim-linux64/bin/nvim $HOME/bin/nvim
 
+# install nodejs for ubuntu
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# install pyright for lsp pythong
+sudo npm i -g pyright
+

@@ -31,6 +31,7 @@ Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'mbbill/undotree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
