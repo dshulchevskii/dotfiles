@@ -68,9 +68,8 @@ let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
-
 nnoremap <leader>e :Telescope oldfiles<CR>
-nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>f :Telescope find_files<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -143,3 +142,9 @@ lua <<EOF
     capabilities = capabilities
   }
 EOF
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
