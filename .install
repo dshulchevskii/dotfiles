@@ -54,3 +54,4 @@ sudo apt-get install -y nodejs
 # install pyright for lsp pythong
 sudo npm i -g pyright
 
+pip install jupytext  # for nvim jupyter viewver
