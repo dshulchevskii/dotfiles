@@ -16,16 +16,21 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs custom_arc_branch_name)
 
-POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="
-command -v arc 1>/dev/null && 
-arc rev-parse --arc-dir 2>/dev/null 1>/dev/null && 
-arc status -bs | 
-head -1 | 
-cut -d' ' -f 2 | 
-cut -d'.' -f 1 | 
-awk '{print \"Ѧ \" \$0}'"
+arc_branch_name(){
+    local inside_arc=$(command -v arc 1>/dev/null && arc rev-parse --arc-dir 2>/dev/null 1>/dev/null && echo 1)
+    if [[ $inside_arc -eq 1 ]]
+    then
+        local branch_name=$(arc status -bs | head -1 | cut -d' ' -f 2 | cut -d'.' -f 1)
+        local color='%K{green}'
+        if [[ $(arc status -bs | wc -l) -gt 1 ]]
+        then
+            color='%K{yellow}'
+        fi
+        echo -n "%{$color%}Ѧ $branch_name%{%f%}"
+    fi
+}
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_BACKGROUND="green"
-POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="arc_branch_name"
 
 
 # Set list of themes to pick from when loading at random
