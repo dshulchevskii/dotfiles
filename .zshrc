@@ -32,7 +32,7 @@ arc_branch_name(){
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_BACKGROUND="green"
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="arc_branch_name"
 
-
+source .z.sh
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
