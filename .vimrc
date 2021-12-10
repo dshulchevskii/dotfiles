@@ -87,7 +87,7 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 
-nnoremap <leader>t :sp <CR> :term <CR> :resize 20<CR>
+nnoremap <leader>t :belowright sp <CR> :term <CR> :resize 20<CR> i
 
 set completeopt=menu,menuone,noselect
 
