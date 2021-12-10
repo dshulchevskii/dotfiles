@@ -16,6 +16,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set colorcolumn=80
+set scrolloff=3
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
@@ -71,6 +72,8 @@ let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+tnoremap <C-[><C-[> <C-\><C-N>
+
 nnoremap <leader>e :Telescope oldfiles<CR>
 nnoremap <leader>f :Telescope find_files<CR>
 
@@ -83,6 +86,8 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <Leader>+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+
+nnoremap <leader>t :sp <CR> :term <CR> :resize 20<CR>
 
 set completeopt=menu,menuone,noselect
 
