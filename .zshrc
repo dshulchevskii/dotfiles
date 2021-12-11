@@ -21,9 +21,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     custom_config_status
     dir
     vcs
-    custom_arc_branch_name
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+    custom_arc_branch_name
     status
     root_indicator
     disk_usage
