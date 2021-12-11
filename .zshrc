@@ -14,7 +14,7 @@ export TERM="xterm-256color"
 ZSH_THEME="powerlevel9k"/powerlevel9k
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir vcs custom_arc_branch_name)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context custom_config_status dir vcs custom_arc_branch_name)
 
 arc_branch_name(){
     local inside_arc=$(command -v arc 1>/dev/null && arc rev-parse --arc-dir 2>/dev/null 1>/dev/null && echo 1)
@@ -31,6 +31,16 @@ arc_branch_name(){
 }
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME_BACKGROUND="green"
 POWERLEVEL9K_CUSTOM_ARC_BRANCH_NAME="arc_branch_name"
+
+config_status(){
+    if [[ $(config status -s | wc -l) -ge 1 ]]
+    then
+        echo -n "·"
+    fi
+}
+
+POWERLEVEL9K_CUSTOM_CONFIG_STATUS_BACKGROUND="yellow"
+POWERLEVEL9K_CUSTOM_CONFIG_STATUS="config_status"
 
 source .z.sh
 # Set list of themes to pick from when loading at random
