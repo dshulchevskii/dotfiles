@@ -17,6 +17,7 @@ set undofile
 set incsearch
 set colorcolumn=80
 set scrolloff=3
+set mouse=nv
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
