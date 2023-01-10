@@ -7,6 +7,8 @@ export PATH=$HOME/bin:$HOME/anaconda3/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
 
+export PATH=$PATH:/opt/homebrew/bin
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -180,4 +182,20 @@ autoload -U compinit && compinit   # load + start completion
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12'
 
 [ -f ~/.work.sh ] && source ~/.work.sh
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/dshulch/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/dshulch/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/dshulch/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/dshulch/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 

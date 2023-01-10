@@ -106,3 +106,4 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+autocmd BufRead,BufNewFile *.yql set filetype=sql
