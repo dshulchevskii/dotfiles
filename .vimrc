@@ -18,6 +18,7 @@ set incsearch
 set colorcolumn=80
 set scrolloff=3
 set mouse=nv
+set clipboard=unnamed
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
